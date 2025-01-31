@@ -7,6 +7,7 @@ from sklearn.datasets import load_iris
 from sklearn.model_selection import train_test_split
 import itertools
 from sklearn.neighbors import KNeighborsClassifier
+import pickle as pkl
 
 #load the iris dataset
 class IrisKNNClassifier:
@@ -50,7 +51,6 @@ class IrisKNNClassifier:
         self.knn = KNeighborsClassifier(n_neighbors=n_neighbors)   
         self.knn.fit(self.data_train, self.target_train)
         
-
     def train_and_evaluate(self,train_size: float,random_state: int,n_neighbors: int):
         self._split_data(train_size,random_state)
         self._train_model(n_neighbors)
@@ -81,6 +81,29 @@ class IrisKNNClassifier:
         
         return prediction, self.iris_dataset['target_names'][prediction]
     
+    def save_model(self, path:str):
+        """Saves the model to a file
+
+        Args:
+            path (str): the path to save the model
+
+        Raises:
+            ValueError: Case when model is not trained
+        """
+        if not self.model_trained:
+            raise ValueError("Model not trained")
+        with open(path, 'wb') as file:
+            pkl.dump(self.knn, file)
+    
+    def load_model(self, path:str):
+        """Loads the model from a file
+
+        Args:
+            path (str): the path to load the model
+        """
+        with open (path, 'rb') as file:
+            self.knn = pkl.load(file)
+    
     #* Prints
     
     def print_description(self):
@@ -106,8 +129,9 @@ class IrisKNNClassifier:
         
 
 if __name__ == "__main__":
+    path = "model.pkl"
     iris = IrisKNNClassifier()
-    iris.print_description()
+    """"iris.print_description()
     iris.print_shape_of_data()
     iris.print_target_names()
     iris.print_feature_names()
@@ -124,3 +148,17 @@ if __name__ == "__main__":
     _,species_predicted =iris.predict(new_data)
     
     print(f"Predicted species: {species_predicted}")
+    
+    #Save model
+    iris.save_model(path)"""
+    
+    #Load model
+    iris.load_model(path)
+    
+    #Predicts new data example
+    new_data = [[5.1, 3.5, 1.4, 0.2]]
+    _,species_predicted =iris.predict(new_data)
+    print(f"Predicted species with loaded model: {species_predicted}")
+    
+    
+    
