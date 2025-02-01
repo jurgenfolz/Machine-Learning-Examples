@@ -17,11 +17,9 @@ class IrisKNNClassifier:
         self.markers: list[str] = ['o', 's', '^']
         self.knn: KNeighborsClassifier = None
         
-    
     @property
     def model_trained(self):
         return False if self.knn is None else True
-    
         
     def _split_data(self,train_size: float,random_state: int):
         self.data_train, self.data_test, self.target_train, self.target_test = train_test_split(
