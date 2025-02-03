@@ -78,3 +78,21 @@ The choice of is crucial for k-NN's performance:
 -   **Prediction time complexity**: (as we compute distances to all training instances and then sort them).
 
 -   Optimizations such as **KD-Trees** and **Ball Trees** can reduce the complexity for large datasets.
+
+5\. Pros and Cons
+----------------------------
+#### Pros:
+
+1.  **Simple and Intuitive**: Easy to understand and implement.
+2.  **No Training Phase**: k-NN is a lazy learner, meaning it doesn't require a training phase.
+3.  **Versatile**: Can be used for both classification and regression tasks.
+4.  **Non-parametric**: Makes no assumptions about the underlying data distribution.
+5.  **Adaptable**: Can handle multi-class classification problems.
+
+#### Cons:
+
+1.  **Computationally Expensive**: High prediction time complexity, especially with large datasets.
+2.  **Memory Intensive**: Requires storing the entire training dataset.
+3.  **Sensitive to Irrelevant Features**: Performance can degrade if irrelevant features are present.
+4.  **Sensitive to Scale**: Requires feature scaling (normalization or standardization) for good performance.
+5.  **Curse of Dimensionality**: Performance can degrade with high-dimensional data.
