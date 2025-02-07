@@ -108,4 +108,74 @@ The performance of a linear regression model is typically evaluated using:
 3.  **Limited to Linear Relationships**: Cannot capture complex non-linear patterns without modifications.
 4.  **Multicollinearity Issues**: Highly correlated independent variables can distort coefficient estimates.
 
-Linear regression is a fundamental technique in machine learning and statistics, serving as a baseline model for many regression tasks. It is widely used in predictive modeling, finance, economics, and various engineering applications.
+**Ridge Regression** is an extension of linear regression that adds an L2 regularization term to the cost function to prevent overfitting:
+
+where is a regularization parameter that controls the penalty applied to the regression coefficients. Larger values of shrink coefficients towards zero, reducing model complexity.
+
+### Advantages of Ridge Regression:
+
+1.  Helps mitigate multicollinearity.
+
+2.  Reduces model variance and prevents overfitting.
+
+3.  Works well when the number of predictors is large.
+
+### Disadvantages:
+
+1.  Coefficients are shrunk but never reach zero.
+
+2.  Less interpretable compared to standard linear regression.
+
+3.  Lasso Regression (L1 Regularization)
+
+* * * * *
+
+**Lasso Regression** (Least Absolute Shrinkage and Selection Operator) is similar to Ridge Regression but uses an L1 penalty:
+
+This penalty encourages sparsity, meaning some coefficients become exactly zero, effectively performing feature selection.
+
+### Advantages of Lasso Regression:
+
+1.  Performs automatic feature selection by setting some coefficients to zero.
+
+2.  Reduces overfitting by penalizing large coefficients.
+
+3.  Suitable for high-dimensional datasets with many irrelevant features.
+
+### Disadvantages:
+
+1.  Can underperform when features are highly correlated.
+
+2.  Computationally expensive for very large datasets.
+
+3.  Choosing Between Ridge and Lasso
+
+* * * * *
+
+-   **Use Ridge** when all predictors contribute to the outcome and multicollinearity is a concern.
+
+-   **Use Lasso** when feature selection is desired and irrelevant features need to be eliminated.
+
+-   **Elastic Net** is a hybrid approach that combines both Ridge and Lasso penalties.
+
+1.  Pros and Cons
+
+* * * * *
+
+### Pros:
+
+1.  **Simple and Interpretable**: Provides clear insights into feature relationships.
+
+2.  **Efficient**: Computationally inexpensive for small to medium datasets.
+
+3.  **Regularization Helps**: Ridge and Lasso improve generalization and prevent overfitting.
+
+4.  **Feature Selection**: Lasso selects important features automatically.
+
+### Cons:
+
+1.  **Sensitive to Outliers**: Still influenced by extreme values.
+
+2.  **Requires Tuning**: The regularization parameter must be carefully selected.
+
+3.  **Interpretability Issues**: Ridge does not set coefficients to zero, making it less interpretable than Lasso.
