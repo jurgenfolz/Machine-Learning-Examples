@@ -1,6 +1,6 @@
 # Machine Learning Examples
 
-This repository contains machine learning examples from the book *Introduction to Machine Learning with Python*.
+This repository contains machine learning examples from the book *Introduction to Machine Learning with Python* and my personal notes.
 
 ## Examples
 
