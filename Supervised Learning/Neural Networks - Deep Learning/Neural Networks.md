@@ -104,4 +104,4 @@ The performance of a neural network is evaluated using different metrics:
 3. **Prone to Overfitting**: Needs techniques like dropout and regularization.
 4. **Requires Large Datasets**: Performance degrades with insufficient data.
 
-Neural networks are at the core of modern AI applications, including self-driving cars, speech recognition, and personalized recommendations. They continue to push the boundaries of machine learning through advancements in architectures and optimization techniques.
+
