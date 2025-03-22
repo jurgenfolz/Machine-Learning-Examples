@@ -97,5 +97,3 @@ The quality of NMF decomposition is evaluated using:
 2\. **Sensitive to Noise**: Noisy data can lead to poor decomposition.  
 3\. **Requires Tuning**: The choice of $` k `$ and regularization parameters affects results.  
 4\. **Not Always Unique**: Different factorizations can yield similar approximations.  
-
-NMF is widely applied in **topic modeling**, **image segmentation**, and **collaborative filtering**, offering an intuitive way to extract meaningful components from high-dimensional data.
