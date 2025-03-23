@@ -95,4 +95,3 @@ t-SNE is typically evaluated visually, rather than through formal metrics, by as
 3\. **Parameter Sensitivity**: Perplexity and learning rate must be carefully tuned.  
 4\. **No Global Distance Meaning**: The scale of distances in the embedding is not globally meaningful.  
 
-t-SNE is a powerful tool for exploring and visualizing high-dimensional data, especially when understanding the structure or clustering behavior of data is the primary goal.
