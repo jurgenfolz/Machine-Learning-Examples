@@ -89,4 +89,3 @@ Clustering performance can be evaluated using:
 3\. **Sensitive to Noise and Outliers**: Can distort the clustering structure.  
 4\. **Greedy Merges are Irreversible**: Early incorrect merges can't be undone.
 
-Agglomerative clustering is a powerful tool for analyzing hierarchical relationships in data and is especially useful in biology, document clustering, and taxonomy construction.
